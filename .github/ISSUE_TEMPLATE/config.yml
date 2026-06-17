@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 Discord Community
-    url: https://discord.gg/synthocore
-    about: Ask questions and get help from the SynthoCore community
   - name: 📖 Documentation
-    url: https://docs.synthocore.ai
+    url: https://synthocore.xyz
     about: Read the full SynthoCore documentation
+  - name: 🐦 X / Twitter
+    url: https://x.com/syntho_core
+    about: Follow @syntho_core for updates and support
   - name: 🔒 Security Vulnerability
-    url: mailto:security@synthocore.ai
+    url: mailto:security@synthocore.xyz
     about: Report security vulnerabilities privately (do not use public issues)

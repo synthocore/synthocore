@@ -12,7 +12,7 @@ Before you begin, make sure you have:
 - **A Coinbase Developer Platform account** — [Sign up](https://cdp.coinbase.com)
 - **A Bankr.bot account** — [Sign up](https://bankr.bot)
 - **A Doppler account** — [Sign up](https://doppler.com)
-- **X/Twitter Developer App** with Filtered Stream access — [Apply](https://developer.x.com)
+- **X/Twitter Developer App** with Filtered Stream v2 access — [Apply](https://developer.x.com)
 
 ---
 
@@ -31,35 +31,16 @@ synco --version
 
 ---
 
-## Step 2 — Authenticate
-
-```bash
-synco auth login
-```
-
-This opens a browser window to complete OAuth authentication with SynthoCore.
-
----
-
-## Step 3 — Initialize an Agent
+## Step 2 — Initialize an Agent
 
 ```bash
 synco init my-first-agent --network base-sepolia
 cd my-first-agent
 ```
 
-This creates a directory with the following structure:
-
-```
-my-first-agent/
-├── synco.config.ts    # Agent configuration
-├── .env.example       # Environment variable template
-└── README.md
-```
-
 ---
 
-## Step 4 — Configure Credentials
+## Step 3 — Configure Credentials
 
 We strongly recommend using **Doppler** for secret management:
 
@@ -90,7 +71,7 @@ Required credentials:
 
 ---
 
-## Step 5 — Start the Agent
+## Step 4 — Start the Agent
 
 ```bash
 # With Doppler (recommended)
@@ -100,7 +81,7 @@ doppler run -- synco start
 synco start
 ```
 
-You'll see:
+Output:
 
 ```
   SynthoCore agent is running ⚡
@@ -111,22 +92,15 @@ You'll see:
 
 ---
 
-## Step 6 — Deploy Your First Token
+## Step 5 — Deploy Your First Token
 
-Once the agent is running, send a test tweet containing your configured keyword (e.g. `$SYNCO`):
+Once the agent is running, post a tweet containing your configured keyword (e.g. `$SYNCO`):
 
 ```
 Just launched $SYNCO — the future of autonomous token deployment! 🚀
 ```
 
-Within ~6 seconds, the agent will:
-
-1. Detect the tweet
-2. Score it above threshold
-3. Provision a CDP wallet
-4. Deploy an ERC-20 to Base Sepolia
-5. Seed liquidity via Bankr.bot
-6. Log the token address
+Within ~6 seconds, the agent will detect the tweet, deploy an ERC-20 to Base Sepolia, and log the result:
 
 ```
 ✅ Token deployed: SYNCO @ 0x1a2b3c4d...
@@ -140,8 +114,8 @@ Within ~6 seconds, the agent will:
 
 - **Read the [Architecture docs](architecture.md)** to understand the 8-step pipeline
 - **Explore the [API Reference](api-reference.md)** for REST endpoints
-- **Check the [SDK docs](https://docs.synthocore.ai/sdk)** to integrate programmatically
-- **Join [Discord](https://discord.gg/synthocore)** for community support
+- **Follow [@syntho_core](https://x.com/syntho_core)** on X for updates
+- **Visit [synthocore.xyz](https://synthocore.xyz)** for the full documentation
 
 ---
 
@@ -150,18 +124,17 @@ Within ~6 seconds, the agent will:
 ### Agent not detecting tweets
 
 1. Verify `TWITTER_BEARER_TOKEN` is set and valid
-2. Check your X Developer App has Filtered Stream v2 access enabled
-3. Confirm your keywords are in the stream rules: `synco status`
+2. Check your X Developer App has Filtered Stream v2 access
+3. Confirm your keywords are configured
 
 ### CDP wallet provisioning fails
 
 1. Verify `CDP_API_KEY` and `CDP_API_SECRET` are correct
 2. Check your CDP account has Base network enabled
-3. Review CDP dashboard for any account-level restrictions
 
 ### Bankr.bot liquidity seeding fails
 
 1. Ensure your Bankr.bot account has sufficient balance on Base Sepolia
 2. Verify `BANKR_TOKEN` is valid
 
-For more help: [Discord #dev-help](https://discord.gg/synthocore) or [GitHub Issues](https://github.com/synthocore/synthocore/issues)
+For more help: [GitHub Issues](https://github.com/synthocore/synthocore/issues) or [X — @syntho_core](https://x.com/syntho_core)

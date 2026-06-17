@@ -1,8 +1,8 @@
 # SynthoCore API Reference
 
-Base URL: `https://api.synthocore.ai/v1`
+Base URL: `https://api.synthocore.xyz/v1`
 
-All endpoints require a valid API key passed in the `Authorization` header:
+All endpoints require a valid API key in the `Authorization` header:
 
 ```
 Authorization: Bearer <SYNCO_API_KEY>
@@ -46,12 +46,11 @@ Manually trigger a token deployment.
 | Field | Type | Required | Description |
 |---|---|---|---|
 | `name` | string | ✅ | Token name (e.g. "PepeCoin") |
-| `symbol` | string | ✅ | Token symbol (e.g. "PEPE", max 10 chars) |
+| `symbol` | string | ✅ | Token symbol (max 10 chars) |
 | `supply` | string | ✅ | Total supply in token units |
 | `network` | string | ✅ | `base-mainnet` or `base-sepolia` |
 | `meta.tweet_url` | string | ❌ | Source tweet URL |
 | `meta.description` | string | ❌ | Token description |
-| `meta.image_url` | string | ❌ | Token logo image URL |
 
 **Response `200 OK`:**
 ```json
@@ -63,7 +62,7 @@ Manually trigger a token deployment.
     "address": "0x1a2b3c4d...",
     "txHash": "0xabcdef12...",
     "network": "base-mainnet",
-    "deployedAt": "2025-01-15T12:00:00.000Z",
+    "deployedAt": "2026-01-15T12:00:00.000Z",
     "explorerUrl": "https://basescan.org/token/0x1a2b3c4d...",
     "latencyMs": 5840
   }
@@ -84,21 +83,11 @@ List all tokens deployed by your account.
 | `offset` | number | Pagination offset |
 | `network` | string | Filter by network |
 
-**Response:**
-```json
-{
-  "tokens": [...],
-  "total": 1247,
-  "limit": 20,
-  "offset": 0
-}
-```
-
 ---
 
 ### `GET /v1/tokens/:address`
 
-Get details and live analytics for a specific token.
+Get details and analytics for a specific token.
 
 **Response:**
 ```json
@@ -107,18 +96,15 @@ Get details and live analytics for a specific token.
     "name": "PepeCoin",
     "symbol": "PEPE",
     "address": "0x1a2b3c4d...",
-    "txHash": "0xabcdef12...",
     "network": "base-mainnet",
-    "deployedAt": "2025-01-15T12:00:00.000Z",
-    "explorerUrl": "https://basescan.org/token/0x1a2b3c4d...",
+    "deployedAt": "2026-01-15T12:00:00.000Z",
     "latencyMs": 5840
   },
   "analytics": {
     "holders": 142,
     "transfers": 891,
     "liquidityUsd": 4200.50,
-    "volumeUsd24h": 18750.00,
-    "priceUsd": 0.00042
+    "volumeUsd24h": 18750.00
   }
 }
 ```
@@ -162,7 +148,7 @@ Check agent health and pipeline statistics.
 
 ### `POST /v1/agent/start`
 
-Start the autonomous agent (if stopped).
+Start the autonomous agent.
 
 ### `POST /v1/agent/stop`
 
@@ -174,7 +160,7 @@ Gracefully stop the autonomous agent.
 
 ### `POST /v1/webhooks`
 
-Register a webhook to receive real-time token deployment events.
+Register a webhook for real-time deployment events.
 
 **Request:**
 ```json
@@ -189,14 +175,14 @@ Register a webhook to receive real-time token deployment events.
 ```json
 {
   "event": "token.deployed",
-  "timestamp": "2025-01-15T12:00:00.000Z",
+  "timestamp": "2026-01-15T12:00:00.000Z",
   "data": {
     "token": { ... }
   }
 }
 ```
 
-Payloads are signed with HMAC-SHA256 using your webhook secret. Verify using the `X-SynthoCore-Signature` header.
+Payloads are signed with HMAC-SHA256. Verify using the `X-SynthoCore-Signature` header.
 
 ---
 
@@ -208,14 +194,6 @@ Payloads are signed with HMAC-SHA256 using your webhook secret. Verify using the
 | Pro | 600 | 100 |
 | Enterprise | Unlimited | Unlimited |
 
-Rate limit headers are included in every response:
-
-```
-X-RateLimit-Limit: 60
-X-RateLimit-Remaining: 47
-X-RateLimit-Reset: 1705320060
-```
-
 ---
 
 ## Error Codes
@@ -226,6 +204,6 @@ X-RateLimit-Reset: 1705320060
 | `FORBIDDEN` | 403 | Insufficient permissions |
 | `NOT_FOUND` | 404 | Resource not found |
 | `RATE_LIMITED` | 429 | Rate limit exceeded |
-| `DEPLOY_FAILED` | 422 | Token deployment failed (see `error.details`) |
+| `DEPLOY_FAILED` | 422 | Token deployment failed |
 | `CDP_ERROR` | 502 | Coinbase CDP upstream error |
 | `INTERNAL_ERROR` | 500 | Internal server error |

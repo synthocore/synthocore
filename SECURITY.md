@@ -13,56 +13,53 @@
 
 **Please do not report security vulnerabilities via public GitHub issues.**
 
-If you discover a security vulnerability in SynthoCore, please report it responsibly:
+If you discover a security vulnerability in SynthoCore, report it responsibly:
 
-**Email:** [security@synthocore.ai](mailto:security@synthocore.ai)
+**Email:** [security@synthocore.xyz](mailto:security@synthocore.xyz)
 
 Include in your report:
 - A description of the vulnerability
-- Steps to reproduce the issue
+- Steps to reproduce
 - Potential impact assessment
 - Any suggested mitigations (optional)
 
-We will acknowledge receipt within **48 hours** and provide a detailed response within **7 days**, including our assessment and a planned remediation timeline.
+We will acknowledge receipt within **48 hours** and provide a response within **7 days**, including our assessment and remediation timeline.
 
 ---
 
 ## Security Practices
 
-SynthoCore is designed with security as a first-class concern:
-
 ### Secret Management
-- All secrets are managed via **Doppler** — no plaintext credentials are ever stored in code, configuration files, or environment variables on disk
-- `.env` files are gitignored and should never be committed
+- All secrets are managed via **Doppler** — no plaintext credentials are stored in code or config files
+- `.env` files are gitignored and must never be committed
 
 ### Wallet Security
-- Agent wallets are provisioned using **Coinbase Developer Platform (CDP) MPC technology**
+- Agent wallets use **Coinbase Developer Platform (CDP) MPC technology**
 - Private keys are never exposed to the application layer
-- Each agent instance operates with an isolated wallet with minimum required permissions
+- Each agent instance uses an isolated wallet
 
 ### Smart Contract Security
-- All token factory contracts are audited before production deployment
+- Token factory contracts are audited before production deployment
 - Contract code is published and verified on Basescan
-- Upgradeable proxy patterns are avoided to prevent admin key risk
+- No upgradeable proxy patterns — no admin key risk
 
 ### API Security
-- All API endpoints require signed JWT authentication
-- Rate limiting is enforced at the API gateway layer
+- All endpoints require signed JWT authentication
+- Rate limiting enforced at the gateway layer
 - Request payloads are validated and sanitized
 
 ### Infrastructure
 - All services communicate over TLS
-- Database credentials are rotated quarterly
-- Dependency audits run on every CI build (`pnpm audit`)
+- Dependencies audited on every CI build (`pnpm audit`)
 
 ---
 
 ## Disclosure Policy
 
-SynthoCore follows a **coordinated disclosure** model:
+SynthoCore follows **coordinated disclosure**:
 
 1. Reporter submits vulnerability via email
-2. SynthoCore team acknowledges within 48 hours
+2. We acknowledge within 48 hours
 3. We investigate and develop a fix
 4. We release a patch and notify the reporter
 5. We publish a security advisory after users have had time to update
@@ -72,13 +69,17 @@ SynthoCore follows a **coordinated disclosure** model:
 
 ## Bug Bounty
 
-We operate a private bug bounty program. If you responsibly disclose a qualifying vulnerability, we will reward you based on severity:
+We run a private bug bounty program. Qualifying vulnerabilities are rewarded in **$SYNCO**:
 
 | Severity | Reward |
 |---|---|
 | Critical | $5,000 – $25,000 in $SYNCO |
 | High | $1,000 – $5,000 in $SYNCO |
 | Medium | $250 – $1,000 in $SYNCO |
-| Low | Recognition + swag |
+| Low | Recognition |
 
-Contact [security@synthocore.ai](mailto:security@synthocore.ai) to learn more about the program scope.
+Contact [security@synthocore.xyz](mailto:security@synthocore.xyz) for program details.
+
+---
+
+© 2026 SynthoCore

@@ -2,9 +2,9 @@
   "name": "synthocore",
   "version": "1.0.0",
   "private": true,
-  "description": "Autonomous AI Agent that turns any X/Tweet into a live Base token in ~6 seconds.",
+  "description": "Autonomous AI Agent that turns any tweet into a live Base token in ~6 seconds.",
   "license": "Apache-2.0",
-  "homepage": "https://synthocore.ai",
+  "homepage": "https://synthocore.xyz",
   "repository": {
     "type": "git",
     "url": "https://github.com/synthocore/synthocore.git"
@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/synthocore/synthocore/issues"
   },
-  "author": "SynthoCore <dev@synthocore.ai>",
+  "author": "SynthoCore <dev@synthocore.xyz>",
   "keywords": [
     "synthocore",
     "synco",

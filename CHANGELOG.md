@@ -7,7 +7,7 @@ Versioning: [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ---
 
-## [1.0.0] — 2025-01-15
+## [1.0.0] — 2026-01-15
 
 ### 🚀 Initial Production Release
 
@@ -15,8 +15,8 @@ Versioning: [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 #### Added
 - Core autonomous agent runtime with 8-step pipeline
-- X/Twitter Firehose signal ingestion and real-time processing
-- NLP signal classification model with configurable score threshold
+- X/Twitter signal ingestion and real-time processing
+- NLP signal classification with configurable score threshold
 - Coinbase Developer Platform (CDP) MPC wallet provisioning
 - ERC-20 token factory deployment on Base mainnet and Sepolia
 - Bankr.bot integration for automated liquidity routing post-deployment
@@ -27,16 +27,14 @@ Versioning: [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 - Bankr.bot skill integration (`/install synthocore`)
 - Docker Compose configuration for local development
 - Comprehensive test suite (unit + integration)
-- CI/CD pipeline via GitHub Actions
 
 #### Performance
 - Average token deployment latency: **~5.84 seconds** from signal detection to Base mainnet
 - Throughput: up to 5 concurrent deployments per agent instance
-- Signal processing: 50,000+ tweets per hour classification rate
 
 ---
 
-## [0.9.0-beta] — 2025-01-01
+## [0.9.0-beta] — 2026-01-01
 
 ### Beta Release
 
@@ -53,14 +51,14 @@ Versioning: [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
 ---
 
-## [0.5.0-alpha] — 2024-12-01
+## [0.5.0-alpha] — 2025-12-01
 
 ### Alpha Release
 
 #### Added
 - Initial proof-of-concept autonomous pipeline
-- Twitter API v2 basic integration
-- Manual ERC-20 deployment via CDP (non-automated)
+- Twitter API v2 integration
+- Manual ERC-20 deployment via CDP
 - Basic REST API structure
 
 ---
