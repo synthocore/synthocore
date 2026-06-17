@@ -1,0 +1,53 @@
+{
+  "name": "synthocore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Autonomous AI Agent that turns any X/Tweet into a live Base token in ~6 seconds.",
+  "license": "Apache-2.0",
+  "homepage": "https://synthocore.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synthocore/synthocore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/synthocore/synthocore/issues"
+  },
+  "author": "SynthoCore <dev@synthocore.ai>",
+  "keywords": [
+    "synthocore",
+    "synco",
+    "ai-agent",
+    "autonomous",
+    "base",
+    "coinbase",
+    "cdp",
+    "web3",
+    "defi",
+    "token-deployment",
+    "bankr",
+    "doppler",
+    "twitter",
+    "x"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "prettier": "^3.2.0",
+    "turbo": "^1.13.0",
+    "typescript": "^5.4.0"
+  }
+}

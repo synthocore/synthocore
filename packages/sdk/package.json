@@ -1,0 +1,47 @@
+{
+  "name": "@synthocore/sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript SDK for SynthoCore — autonomous AI token deployment on Base",
+  "license": "Apache-2.0",
+  "homepage": "https://docs.synthocore.ai/sdk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/synthocore/synthocore.git",
+    "directory": "packages/sdk"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@synthocore/core": "workspace:*",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.3.0"
+  },
+  "keywords": [
+    "synthocore",
+    "synco",
+    "base",
+    "coinbase",
+    "cdp",
+    "web3",
+    "ai-agent",
+    "token-deployment",
+    "sdk"
+  ]
+}

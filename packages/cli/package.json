@@ -1,0 +1,30 @@
+{
+  "name": "@synthocore/cli",
+  "version": "1.0.0",
+  "description": "SynthoCore CLI — deploy autonomous AI agents from your terminal",
+  "license": "Apache-2.0",
+  "bin": {
+    "synco": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@synthocore/core": "workspace:*",
+    "commander": "^12.0.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1",
+    "inquirer": "^9.2.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": ["synthocore", "synco", "cli", "ai-agent", "base", "coinbase", "cdp"]
+}
